@@ -12,16 +12,17 @@ import Inversiones from '../pages/Inversiones/Inversiones'
 
 interface AppRouterProps {
   user: string | null
+  onLogin: (username: string) => void
   onLogout: () => void
 }
 
-export default function AppRouter({ user, onLogout }: AppRouterProps) {
+export default function AppRouter({ user, onLogin, onLogout }: AppRouterProps) {
   return (
     <Routes>
       {/* Ruta de inicio/login */}
       <Route 
         path="/" 
-        element={!user ? <Home /> : <Navigate to="/dashboard" replace />}
+        element={!user ? <Home onLogin={onLogin} /> : <Navigate to="/dashboard" replace />}
       />
 
       {/* Rutas del dashboard (solo si hay usuario logueado) */}
