@@ -61,10 +61,10 @@ export default function IngresoTable({ ingresos, onEdit, onDelete }: Props) {
             {/* Botones de acción para editar y eliminar */}
             <td>
               <Button variant="outline-primary" size="sm" className="me-1" onClick={() => onEdit(ingreso)}>
-                <i className="bi bi-pencil"></i>
+                <i className="bi bi-pencil">Editar</i>
               </Button>
               <Button variant="outline-danger" size="sm" onClick={() => onDelete(ingreso.id)}>
-                <i className="bi bi-trash"></i>
+                <i className="bi bi-trash">Eliminar</i>
               </Button>
             </td>
           </tr>
