@@ -107,7 +107,7 @@ export default function Gastos() {
           <div className="d-flex justify-content-between align-items-center mb-3">
             <h5>Gastos Registrados</h5>
             <Alert variant="info" className="mb-0">
-              Total: ${total.toFixed(2)}
+              Total: $ {total.toFixed(2)}
             </Alert>
           </div>
           <GastoTable

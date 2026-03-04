@@ -24,7 +24,7 @@ export default function GastoTable({ gastos, onEdit, onDelete }: GastoTableProps
           <tr key={gasto.id}>
             <td>{new Date(gasto.fecha).toLocaleDateString('es-ES')}</td>
             <td>{gasto.categoria}</td>
-            <td>${gasto.monto.toFixed(2)}</td>
+            <td>$ {gasto.monto.toFixed(2)}</td>
             <td>{gasto.descripcion || '-'}</td>
             <td>
               <Button
