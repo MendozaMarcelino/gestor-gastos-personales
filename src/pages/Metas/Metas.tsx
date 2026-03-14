@@ -170,7 +170,7 @@ export default function Metas() {
                     <div className="mb-3">
                       <div className="d-flex justify-content-between mb-1">
                         <small>Progreso del ahorro: {progreso.toFixed(1)}%</small>
-                        <small>$ {meta.montoActual.toLocaleString('es-CO')} / ${meta.montoObjetivo.toLocaleString('es-CO')}</small>
+                        <small>$ {meta.montoActual.toLocaleString('es-CO')} / $ {meta.montoObjetivo.toLocaleString('es-CO')}</small>
                       </div>
                       <ProgressBar 
                         now={progreso} 

@@ -79,7 +79,7 @@ export default function Categorias() {
           <div className="card shadow-sm border-success">
             <div className="card-body">
               <h5 className="text-success"><i className="bi bi-plus-circle me-2"></i>Total Ingresos</h5>
-              <h3 className="text-success">${totalIngresos.toLocaleString('es-CO', { minimumFractionDigits: 2 })}</h3>
+              <h3 className="text-success">$ {totalIngresos.toLocaleString('es-CO', { minimumFractionDigits: 2 })}</h3>
             </div>
           </div>
         </div>
@@ -87,7 +87,7 @@ export default function Categorias() {
           <div className="card shadow-sm border-danger">
             <div className="card-body">
               <h5 className="text-danger"><i className="bi bi-dash-circle me-2"></i>Total Gastos</h5>
-              <h3 className="text-danger">${totalGastos.toLocaleString('es-CO', { minimumFractionDigits: 2 })}</h3>
+              <h3 className="text-danger">$ {totalGastos.toLocaleString('es-CO', { minimumFractionDigits: 2 })}</h3>
             </div>
           </div>
         </div>
@@ -126,7 +126,7 @@ export default function Categorias() {
                     </td>
                     <td>
                       <Button size="sm" variant="outline-info" onClick={() => handleViewDetails(stat)}>
-                        <i className="bi bi-eye"></i> Ver
+                        <i className="bi bi-eye">Ver Detalles</i> 
                       </Button>
                     </td>
                   </tr>
@@ -145,8 +145,8 @@ export default function Categorias() {
         </Modal.Header>
         <Modal.Body>
           <p><strong>Cantidad de registros:</strong> {selectedCategoria?.cantidad}</p>
-          <p><strong>Total:</strong> ${selectedCategoria?.total.toLocaleString('es-CO', { minimumFractionDigits: 2 })}</p>
-          <p><strong>Promedio:</strong> ${selectedCategoria ? (selectedCategoria.total / selectedCategoria.cantidad).toLocaleString('es-CO', { minimumFractionDigits: 2 }) : 0}</p>
+          <p><strong>Total:</strong> $ {selectedCategoria?.total.toLocaleString('es-CO', { minimumFractionDigits: 2 })}</p>
+          <p><strong>Promedio:</strong> $ {selectedCategoria ? (selectedCategoria.total / selectedCategoria.cantidad).toLocaleString('es-CO', { minimumFractionDigits: 2 }) : 0}</p>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={() => setShowModal(false)}>

@@ -44,7 +44,7 @@ export default function IngresoStats({ ingresos }: Props) {
             <div className="d-flex justify-content-between align-items-center">
               <div>
                 <h6 className="text-muted mb-1">Total Mes Actual</h6>
-                <h3 className="text-primary mb-0">${totalCurrent.toLocaleString('es-CO', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</h3>
+                <h3 className="text-primary mb-0">$ {totalCurrent.toLocaleString('es-CO', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</h3>
               </div>
               <i className="bi bi-cash-coin fs-1 text-primary"></i>
             </div>
@@ -60,7 +60,7 @@ export default function IngresoStats({ ingresos }: Props) {
                 <h6 className="text-muted mb-1">Variación</h6>
                 {/* Muestra la variación en verde si es positiva, rojo si es negativa */}
                 <h4 className={isPositive ? 'text-success mb-0' : 'text-danger mb-0'}>
-                  {isPositive ? '+' : ''}${variation.toLocaleString('es-CO', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                  {isPositive ? '+' : ''}$ {variation.toLocaleString('es-CO', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                   <i className={`bi bi-arrow-${isPositive ? 'up' : 'down'}-circle ms-2`}></i>
                 </h4>
               </div>
@@ -68,7 +68,7 @@ export default function IngresoStats({ ingresos }: Props) {
                 <h6 className="text-muted mb-1">Porcentaje</h6>
                 {/* Muestra el porcentaje de variación */}
                 <h4 className={isPositive ? 'text-success mb-0' : 'text-danger mb-0'}>
-                  {isPositive ? '+' : ''}{variationPercent.toFixed(1)}%
+                  {isPositive ? '+' : ''}{variationPercent.toFixed(1)} %
                 </h4>
               </div>
             </div>
@@ -82,7 +82,7 @@ export default function IngresoStats({ ingresos }: Props) {
             <div className="d-flex justify-content-between align-items-center">
               <div>
                 <h6 className="text-muted mb-1">Mes Anterior</h6>
-                <h4 className="mb-0">${totalLast.toLocaleString('es-CO', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</h4>
+                <h4 className="mb-0">$ {totalLast.toLocaleString('es-CO', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</h4>
               </div>
               <i className="bi bi-calendar-check fs-1 text-muted"></i>
             </div>

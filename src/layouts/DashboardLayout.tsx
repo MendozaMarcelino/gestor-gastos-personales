@@ -39,16 +39,18 @@ export default function DashboardLayout({ user, onLogout }: DashboardLayoutProps
 
           <div className="header-right">
             <div className="user-info d-flex align-items-center">
+              
               <span className="me-3">
                 <i className="bi bi-person-circle me-2"></i>
                 {user}
               </span>
+
               <button
                 className="btn btn-outline-primary btn-sm"
                 onClick={handleLogout}
               >
                 <i className="bi bi-box-arrow-right me-2"></i>
-                Cerrar Sesión
+                Cerrar Sesión 
               </button>
             </div>
           </div>

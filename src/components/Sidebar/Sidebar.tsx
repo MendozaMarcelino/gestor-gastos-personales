@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 import { sidebarItems } from './sidebarItems'
 import './Sidebar.css'
 
@@ -21,9 +21,11 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
       {/* Sidebar */}
       <div className={`sidebar ${isOpen ? 'open' : ''}`}>
         <div className="sidebar-header pb-3 border-bottom">
-          <h5 className="mb-0 text-primary">
-            <i className="bi bi-wallet2 me-2"></i>Gestor de Gastos
-          </h5>
+          <Link to="/dashboard" className="text-decoration-none" onClick={onClose}>
+            <h5 className="mb-0 text-primary">
+              <i className="bi bi-wallet2 me-2"></i>Gestor de Gastos
+            </h5>
+          </Link>
         </div>
 
         <nav className="sidebar-nav mt-4">
