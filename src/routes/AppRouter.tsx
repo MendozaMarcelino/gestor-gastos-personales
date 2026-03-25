@@ -8,7 +8,6 @@ import Categorias from '../pages/Categorias/Categorias'
 import Transacciones from '../pages/Transacciones/Transacciones'
 import Informes from '../pages/Informes/Informes'
 import Metas from '../pages/Metas/Metas'
-import Inversiones from '../pages/Inversiones/Inversiones'
 
 interface AppRouterProps {
   user: string | null
@@ -37,7 +36,6 @@ export default function AppRouter({ user, onLogin, onLogout }: AppRouterProps) {
         <Route path="transacciones" element={<Transacciones />} />
         <Route path="informes" element={<Informes />} />
         <Route path="metas" element={<Metas />} />
-        <Route path="inversiones" element={<Inversiones />} />
       </Route>
 
       {/* Ruta por defecto - redirigir a home */}

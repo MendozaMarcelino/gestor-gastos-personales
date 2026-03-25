@@ -35,9 +35,4 @@ export const sidebarItems: SidebarItem[] = [
     path: '/dashboard/metas',
     icon: 'bi-bullseye'
   },
-  {
-    label: 'Inversiones',
-    path: '/dashboard/inversiones',
-    icon: 'bi-graph-up'
-  }
 ]

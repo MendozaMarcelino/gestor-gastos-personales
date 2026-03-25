@@ -7,14 +7,12 @@ import RecentTransactions from './components/RecentTransactions';
 import GoalsBarChart from './components/GoalsBarChart';
 import { getAllIngresos } from '../../services/ingresosStorage';
 import { getAllGastos } from '../../services/gastosStorage';
-import { getAllInversiones } from '../../services/inversionesStorage';
 import { getAllMetas } from '../../services/metasStorage';
 
 export default function DashboardHome() {
   //  ESTADOS: Almacenan los datos de ingresos, gastos e inversiones
   const [ingresos, setIngresos] = useState(getAllIngresos());
   const [gastos, setGastos] = useState(getAllGastos());
-  const [inversiones, setInversiones] = useState(getAllInversiones());
   const [metas, setMetas] = useState(getAllMetas());
 
   //  ACTUALIZACIÓN AUTOMÁTICA: Refresca los datos cada segundo
@@ -22,7 +20,6 @@ export default function DashboardHome() {
     const interval = setInterval(() => {
       setIngresos(getAllIngresos());
       setGastos(getAllGastos());
-      setInversiones(getAllInversiones());
       setMetas(getAllMetas());
     }, 1000);
     return () => clearInterval(interval);
@@ -50,9 +47,6 @@ export default function DashboardHome() {
 
   //  KPI 3: Balance = Ingresos - Gastos
   const balance = ingresosDelMes - gastosDelMes;
-  //  KPI 4: Total de inversiones
-  const totalInversiones = inversiones.reduce((sum, inv) => sum + inv.monto, 0);
-
   //  GRÁFICA DE LÍNEAS: Datos día por día del mes (30 días)
   const lineChartData = useMemo(() => {
     const days = Array.from({ length: 30 }, (_, i) => i + 1);
@@ -123,10 +117,7 @@ export default function DashboardHome() {
         <Col xs={12} sm={6} lg={3}>
           <KPICard title="Balance Actual" value={`$ ${balance.toFixed(2)}`} percentage={balance >= 0 ? 15 : -15} icon="wallet2" color="" />
         </Col>
-        <Col xs={12} sm={6} lg={3}>
-          <KPICard title="Inversiones Totales" value={`$ ${totalInversiones.toFixed(2)}`} percentage={5} icon="graph-up-arrow" color="" />
-        </Col>
-      </Row>
+        </Row>
 
       {/*  SECCIÓN 2: GRÁFICA DE LÍNEAS (Ingresos vs Gastos) */}
       <Row className="mb-4">
